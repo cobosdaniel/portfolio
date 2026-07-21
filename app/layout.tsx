@@ -14,7 +14,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Daniel Cobos",
-  description: "Portfolio for Daniel Cobos",
+  description:
+    "Portfolio of Daniel Cobos — Software Engineer specializing in full-stack, mobile, and cloud development.",
 };
 
 export default function RootLayout({
