@@ -2,34 +2,30 @@ import Image from "next/image";
 import Link from "next/link";
 
 const skills = {
-  Languages: ["C/C++", "Java", "Python", "JavaScript", "TypeScript", "Shell Script", "HTML/CSS"],
-  Frameworks: ["React", "React Native", "Next.js", "Flask", "FastAPI"],
-  "Cloud & Tools": ["AWS", "MySQL", "Git", "Agile/Scrum", "SDLC"],
+  Languages: ["Python", "JavaScript", "TypeScript", "Java", "C/C++", "Shell Script", "HTML/CSS"],
+  "Frameworks & Libraries": ["React", "Next.js", "Tailwind CSS", "FastAPI", "Flask"],
+  "Tools & Platforms": ["MySQL", "Git", "REST APIs", "WebSockets", "EventSub", "OAuth 2.0", "Agile/Scrum", "Linux"],
+  "Cloud & Deployment": ["Vercel", "Railway"],
 };
 
 const projects = [
   {
-    title: "Streamer-Social",
-    period: "Personal Project",
+    title: "Portfolio Site",
+    period: "danielcobos.dev",
     description:
-      "A Twitch channel-points tracker and analytics dashboard. Streams live redemptions via EventSub WebSocket, ranks viewers on leaderboards, and tracks watch streaks against a configurable stream schedule.",
-    tags: ["React", "TypeScript", "FastAPI", "Python", "MySQL", "WebSocket", "Twitch OAuth"],
+      "This site. Built and deployed with Next.js, TypeScript, and Tailwind CSS, with CI/CD via Vercel triggering automatic production deploys on every push to main.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
+    code: "https://github.com/cobosdaniel/portfolio",
+    live: "https://danielcobos.dev",
+  },
+  {
+    title: "Twitch Channel Points Tracker",
+    period: "Jan 2026 – Present",
+    description:
+      "A full-stack app to track and analyze Twitch Channel Points redemptions in real time. Integrates Twitch OAuth 2.0 and EventSub WebSocket APIs to ingest live redemption events across concurrent streams, fanning out updates to a live analytics dashboard with per-streamer leaderboards and redemption history.",
+    tags: ["React", "TypeScript", "FastAPI", "Python", "MySQL", "WebSocket", "OAuth 2.0"],
     code: "https://github.com/cobosdaniel/Streamer-Social",
     live: "https://streamer-social.vercel.app",
-  },
-  {
-    title: "Big John's Books",
-    period: "Capstone · Sep 2024 – May 2025",
-    description:
-      "Scrum Master for a 6-person team building a digital inventory management website for a local bookstore. Enabled real-time inventory tracking via RESTful APIs, improving stock visibility and accuracy.",
-    tags: ["Python", "Flask", "MySQL", "REST APIs", "Digital Ocean"],
-  },
-  {
-    title: "Mobile Rating App",
-    period: "SER 424 · Jan 2025 – May 2025",
-    description:
-      "A React Native mobile app with secure user authentication and an optimized architecture, built with software configuration management for version control and team collaboration.",
-    tags: ["React Native", "Mobile", "Authentication"],
   },
 ];
 
@@ -39,8 +35,20 @@ const experience = [
     org: "Kutta Technologies",
     period: "Apr 2024 – Aug 2024",
     points: [
-      "Designed and implemented real-time communication modules in C++ and Shell Script, compliant with NATO software standards for autonomous vehicle systems; the codebase was selected as the enterprise benchmark to replace legacy systems.",
-      "Applied SDLC practices — requirements analysis, debugging, testing, and Linux deployment — to help project managers ensure reliable, high-quality outcomes.",
+      "Modified and extended legacy C++ code to implement requested functionality and resolve software defects.",
+      "Developed, tested, and debugged software within a Linux environment.",
+      "Collaborated with senior engineers through code reviews, incorporating feedback before submitting pull requests for integration.",
+      "Contributed to an Agile software development process while participating throughout the Software Development Life Cycle (SDLC).",
+    ],
+  },
+  {
+    role: "Big John's Books Web App",
+    org: "Capstone Project",
+    period: "Sep 2024 – May 2025",
+    points: [
+      "Led a 6-person team to design and deliver a digital inventory management system using Flask, MySQL, and cloud infrastructure — shipped two weeks ahead of schedule.",
+      "Maintained ~90% story completion across 12 sprints using Taiga, keeping the team aligned on scope, velocity, and delivery milestones.",
+      "Built RESTful APIs enabling real-time inventory tracking and improved stock visibility, directly improving operational efficiency for end users.",
     ],
   },
   {
@@ -48,8 +56,9 @@ const experience = [
     org: "Chick-fil-A",
     period: "Aug 2020 – Present",
     points: [
-      "Direct a team of 10 kitchen staff, enforcing standardized operating procedures and county health regulations.",
-      "Implemented agile/scrum methods to streamline operations and foster a proactive safety culture.",
+      "Direct a 10-person team to deliver consistent quality outcomes in a high-volume, compliance-driven environment.",
+      "Forecast demand and manage logistics to maintain service levels while minimizing waste.",
+      "Improved team throughput and accountability by introducing Agile/Scrum practices to a non-technical operational environment.",
     ],
   },
 ];
@@ -73,12 +82,13 @@ export default function Home() {
               Daniel Cobos
             </h1>
             <p className="text-sm sm:text-base text-black/70 dark:text-white/70 mt-1">
-              Software Engineer — Full-Stack, Mobile, and Cloud.
+              Full-Stack Software Engineer — React, Next.js, and real-time systems.
             </p>
             <p className="text-sm sm:text-base text-black/60 dark:text-white/60 mt-3 max-w-2xl">
-              ASU Software Engineering grad building full-stack web and mobile apps.
-              I&apos;m into anime, gaming, and streaming/content creation — and I like
-              folding those passions into my personal projects.
+              Front-end depth in React, Next.js, and TypeScript, with hands-on experience
+              building real-time, event-driven systems. I&apos;m into anime, gaming, and
+              streaming/content creation — and I like folding those passions into my
+              personal projects.
             </p>
             <div className="mt-4 flex flex-wrap gap-3">
               <Link
@@ -102,7 +112,7 @@ export default function Home() {
                 Resume
               </Link>
               <Link
-                href="https://www.linkedin.com/in/daniel-cobos-7164a9286/"
+                href="https://www.linkedin.com/in/daniel-r-cobos/"
                 className="inline-flex h-10 items-center rounded-xl border px-4 text-sm sm:text-base hover:bg-black/5 dark:hover:bg-white/10 transition"
                 target="_blank"
               >
@@ -213,10 +223,12 @@ export default function Home() {
           <div className="rounded-2xl border p-4 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
             <h3 className="font-medium">
               B.S. in Software Engineering{" "}
-              <span className="text-black/50 dark:text-white/50">· Arizona State University</span>
+              <span className="text-black/50 dark:text-white/50">
+                · Arizona State University · Cum laude, GPA 3.4
+              </span>
             </h3>
             <span className="text-xs text-black/50 dark:text-white/50 whitespace-nowrap">
-              May 2025
+              2025
             </span>
           </div>
         </section>
