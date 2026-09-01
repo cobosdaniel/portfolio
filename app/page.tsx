@@ -25,7 +25,7 @@ const projects = [
       "A full-stack app to track and analyze Twitch Channel Points redemptions in real time. Integrates Twitch OAuth 2.0 and EventSub WebSocket APIs to ingest live redemption events across concurrent streams, fanning out updates to a live analytics dashboard with per-streamer leaderboards and redemption history.",
     tags: ["React", "TypeScript", "FastAPI", "Python", "MySQL", "WebSocket", "OAuth 2.0"],
     code: "https://github.com/cobosdaniel/Streamer-Social",
-    live: "https://streamer-social.vercel.app",
+    live: "https://fwitz.com",
   },
 ];
 
