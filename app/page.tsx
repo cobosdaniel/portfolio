@@ -20,6 +20,7 @@ const projects = [
   },
   {
     title: "Twitch Channel Points Tracker",
+    role: "Founder · Fwitz.com",
     period: "Jan 2026 – Present",
     description:
       "A full-stack app to track and analyze Twitch Channel Points redemptions in real time. Integrates Twitch OAuth 2.0 and EventSub WebSocket APIs to ingest live redemption events across concurrent streams, fanning out updates to a live analytics dashboard with per-streamer leaderboards and redemption history.",
@@ -161,6 +162,11 @@ export default function Home() {
                     {project.period}
                   </span>
                 </div>
+                {project.role && (
+                  <p className="text-xs text-black/50 dark:text-white/50 mt-0.5">
+                    {project.role}
+                  </p>
+                )}
                 <p className="text-sm text-black/70 dark:text-white/70 mt-1">
                   {project.description}
                 </p>
